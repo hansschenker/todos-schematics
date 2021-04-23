@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-todos',
-  templateUrl: './todos.component.html',
+  templateUrl: './todos.page.html',
 })
-export class TodosComponent {}
+export class TodosPage {}

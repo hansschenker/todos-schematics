@@ -1,30 +1,34 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TodosComponent } from 'src/app/todos/components/todos/todos.component';
-import { Routes, RouterModule } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { TodosService } from './services/todos.service';
-import { MainComponent } from './components/main/main.component';
-import { TodoComponent } from './components/todo/todo.component';
-import { FooterComponent } from './components/footer/footer.component';
+// Todo Feature
+import { TodosPage } from 'src/app/todos/todos.page';
+import { TodosService } from './todos.service';
+import { HeaderComponent } from './components/ui/header/header.component';
+import { MainComponent } from './components/ui/main/main.component';
+import { TodoComponent } from './components/feature/todo/todo.component';
+import { FooterComponent } from './components/ui/footer/footer.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: TodosComponent,
-  },
-];
 
 @NgModule({
   declarations: [
-    TodosComponent,
+    TodosPage,
     HeaderComponent,
     MainComponent,
     TodoComponent,
     FooterComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  exports: [
+    TodosPage,
+    HeaderComponent,
+    MainComponent,
+    TodoComponent,
+    FooterComponent,
+  ],
+  // imports: [BrowserModule],
+  imports: [BrowserModule, CommonModule],
   providers: [TodosService],
+  bootstrap: [TodosPage]
 })
 export class TodosModule {}

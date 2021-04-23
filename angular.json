@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "todomvc"
+    }
+  },
+  "defaultProject": "todomvc",
+  "cli": {
+    "analytics": false
+  }
 }
