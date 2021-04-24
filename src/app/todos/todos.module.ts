@@ -7,23 +7,23 @@ import { TodosPage } from 'src/app/todos/todos.page';
 import { TodosService } from './todos.service';
 import { HeaderComponent } from './components/ui/header/header.component';
 import { MainComponent } from './components/ui/main/main.component';
-import { TodoComponent } from './components/feature/todo/todo.component';
+// import { TodoListItem } from './components/feature/todos/todo-list-item/todo-list-item.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
+import { TodoListItem } from './todo-list-item/todo-list-item.component';
 
 
 @NgModule({
   declarations: [
     TodosPage,
+    TodoListItem,
     HeaderComponent,
     MainComponent,
-    TodoComponent,
     FooterComponent,
   ],
   exports: [
     TodosPage,
     HeaderComponent,
     MainComponent,
-    TodoComponent,
     FooterComponent,
   ],
   // imports: [BrowserModule],

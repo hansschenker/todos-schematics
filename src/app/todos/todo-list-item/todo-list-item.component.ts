@@ -1,3 +1,5 @@
+import { TodosService } from './../todos.service';
+import { Todo } from './../types/todo';
 import {
   Component,
   Input,
@@ -9,15 +11,14 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { TodoInterface } from '../../../types/todo.interface';
-import { TodosService } from '../../../todos.service';
+
 
 @Component({
   selector: 'app-todos-todo',
-  templateUrl: './todo.component.html',
+  templateUrl: './todo-list-item.component.html',
 })
-export class TodoComponent implements OnInit, OnChanges {
-  @Input('todo') todoProps: TodoInterface;
+export class TodoListItem implements OnInit, OnChanges {
+  @Input('todo') todoProps: Todo;
   @Input('isEditing') isEditingProps: boolean;
   @Output('setEditingId') setEditingIdEvent: EventEmitter<
     string | null
