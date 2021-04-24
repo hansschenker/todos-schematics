@@ -16,9 +16,11 @@ export class MainComponent {
   editingId: string | null = null;
 
   constructor(private todosService: TodosService) {
+
     this.isAllTodosSelected$ = this.todosService.todos$.pipe(
       map((todos) => todos.every((todo) => todo.isCompleted))
     );
+    
     this.noTodoClass$ = this.todosService.todos$.pipe(
       map((todos) => todos.length === 0)
     );

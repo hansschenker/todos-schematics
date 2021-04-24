@@ -16,6 +16,7 @@ export class FooterComponent {
   filterEnum = FilterEnum;
 
   constructor(private todosService: TodosService) {
+    
     this.activeCount$ = this.todosService.todos$.pipe(
       map((todos) => todos.filter((todo) => !todo.isCompleted).length)
     );

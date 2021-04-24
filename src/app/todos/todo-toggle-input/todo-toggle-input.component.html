@@ -1,0 +1,11 @@
+<ng-container >
+    <label for="toggle-all">Toggle Complete</label>
+
+    <input
+    id="toggle-all"
+    class="toggle-all"
+    type="checkbox"
+    [checked]="isAllTodosSelected$ | async"
+    (change)="toggleAllTodos($event)"
+    />
+</ng-container>

@@ -1,1 +1,4 @@
-<p>todo-count works!</p>
+<span class="todo-count">
+    <strong>{{ activeCount$ | async }}</strong>
+    {{ itemsLeftText$ | async }}
+  </span>
