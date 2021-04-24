@@ -5,10 +5,10 @@ import { CommonModule } from '@angular/common';
 // Todo Feature
 import { TodosPage } from 'src/app/todos/todos.page';
 import { TodosService } from './todos.service';
-import { HeaderComponent } from './components/ui/header/header.component';
-import { MainComponent } from './components/ui/main/main.component';
+import { HeaderComponent } from './ui/header/header.component';
+import { MainComponent } from './ui/main/main.component';
 // import { TodoListItem } from './components/feature/todos/todo-list-item/todo-list-item.component';
-import { FooterComponent } from './components/ui/footer/footer.component';
+import { FooterComponent } from './ui/footer/footer.component';
 import { TodoListItem } from './todo-list-item/todo-list-item.component';
 
 

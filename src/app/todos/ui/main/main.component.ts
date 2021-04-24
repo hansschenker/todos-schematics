@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable, combineLatest } from 'rxjs';
-import { Todo } from '../../../types/todo';
-import { TodosService } from '../../../todos.service';
+import { Todo } from '../../types/todo';
+import { TodosService } from '../../todos.service';
 import { map } from 'rxjs/operators';
-import { FilterEnum } from '../../../types/filter.enum';
+import { FilterEnum } from '../../types/filter.enum';
 
 @Component({
   selector: 'app-todos-main',
