@@ -15,6 +15,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoFilterComponent } from './todo-filter/todo-filter.component';
 import { TodoCountComponent } from './todo-count/todo-count.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { TodoInputComponent } from './todo-input/todo-input.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
     TodoFilterComponent,
     TodoCountComponent,
     TodoFormComponent,
+    TodoInputComponent,
   ],
   exports: [
     HeaderComponent,
