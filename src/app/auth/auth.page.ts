@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'todo-form',
-  templateUrl: './todo-form.component.html',
-  styleUrls: ['./todo-form.component.css'],
+  selector: 'app-auth',
+  templateUrl: './auth.page.html',
+  styleUrls: ['./auth.page.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class TodoFormComponent implements OnInit {
+export class AuthPage implements OnInit {
 
   constructor() { }
 

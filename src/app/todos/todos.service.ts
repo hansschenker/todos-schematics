@@ -5,7 +5,11 @@ import { FilterEnum } from './types/filter.enum';
 
 @Injectable()
 export class TodosService {
-  todos$ = new BehaviorSubject<Todo[]>([]);
+  todos$ = new BehaviorSubject<Todo[]>([
+    { id: 'a', text: 'Todo 100', isCompleted: false},
+    { id: 'b', text: 'Todo 200', isCompleted: false},
+    { id: 'c', text: 'Todo 300', isCompleted: false}
+  ]);
   filter$ = new BehaviorSubject<FilterEnum>(FilterEnum.all);
 
   addTodo(text: string): void {

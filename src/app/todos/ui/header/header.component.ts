@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TodosService } from '../../todos.service';
 
 @Component({
-  selector: 'todos-header',
+  selector: 'todo-header',
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {

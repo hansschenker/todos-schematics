@@ -1,10 +1,11 @@
 import { TodosService } from './../todos.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'todo-input',
   templateUrl: './todo-input.component.html',
-  styleUrls: ['./todo-input.component.css']
+  styleUrls: ['./todo-input.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TodoInputComponent implements OnInit {
   text: string = '';

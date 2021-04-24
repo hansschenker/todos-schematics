@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { FilterEnum } from '../../types/filter.enum';
 
 @Component({
-  selector: 'todos-main',
+  selector: 'todo-main',
   templateUrl: './main.component.html',
 })
 export class MainComponent {

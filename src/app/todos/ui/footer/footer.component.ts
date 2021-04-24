@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { FilterEnum } from '../../types/filter.enum';
 
 @Component({
-  selector: 'todos-footer',
+  selector: 'todo-footer',
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {

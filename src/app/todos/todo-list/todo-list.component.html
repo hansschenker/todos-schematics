@@ -1,3 +1,6 @@
+<ng-container>
+    <h3>Todo List</h3>
+    <todo-input></todo-input>
 <ul class="todo-list">
     <todo-item
       *ngFor="let todo of visibleTodos$ | async"
@@ -5,5 +8,7 @@
       [isEditing]="editingId === todo.id"
       (setEditingId)="setEditingId($event)"
     ></todo-item>
-  </ul>
-  
+  </ul> 
+     <todo-toggle></todo-toggle>
+</ng-container>
+

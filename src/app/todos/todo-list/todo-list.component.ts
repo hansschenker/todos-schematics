@@ -2,13 +2,14 @@ import { FilterEnum } from './../types/filter.enum';
 import { TodosService } from './../todos.service';
 import { Observable, combineLatest } from 'rxjs';
 import { Todo } from './../types/todo';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TodoListComponent implements OnInit {
 

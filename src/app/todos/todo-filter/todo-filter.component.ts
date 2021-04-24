@@ -1,15 +1,16 @@
 import { Observable } from 'rxjs';
 import { TodosService } from './../todos.service';
 import { FilterEnum } from './../types/filter.enum';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'todo-filter',
   templateUrl: './todo-filter.component.html',
-  styleUrls: ['./todo-filter.component.css']
+  styleUrls: ['./todo-filter.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TodoFilterComponent implements OnInit {
-  
+
   filter$: Observable<FilterEnum>;
   filterEnum = FilterEnum;
 

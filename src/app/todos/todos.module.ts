@@ -1,12 +1,15 @@
+import { LoginComponent } from './../auth/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from "@angular/router";
 
 // Todo Ui
 import { TodosPage } from 'src/app/todos/todos.page';
 import { HeaderComponent } from './ui/header/header.component';
 import { MainComponent } from './ui/main/main.component';
 import { FooterComponent } from './ui/footer/footer.component';
+import { AuthPage } from './../auth/auth.page';
 
 // Todo Feature
 import { TodosService } from './todos.service';
@@ -18,6 +21,11 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoInputComponent } from './todo-input/todo-input.component';
 import { TodoToggleComponent } from './todo-toggle-input/todo-toggle-input.component';
 
+const routes: Routes = [
+  { path: 'main', component: MainComponent },
+  { path: 'todos', component: TodoListComponent },
+   { path: 'auth', component: LoginComponent }
+]
 
 @NgModule({
   declarations: [
@@ -38,10 +46,11 @@ import { TodoToggleComponent } from './todo-toggle-input/todo-toggle-input.compo
     MainComponent,
     FooterComponent,
     TodosPage,
+    RouterModule
   ],
   // imports: [BrowserModule],
-  imports: [BrowserModule, CommonModule],
-  providers: [TodosService],
+  imports: [BrowserModule, CommonModule, RouterModule.forRoot(routes)],
+  providers: [TodosService, RouterModule],
   bootstrap: [TodosPage]
 })
 export class TodosModule {}

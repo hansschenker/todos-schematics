@@ -1,5 +1,18 @@
 <div class="todoapp">
-  <todos-header></todos-header>
-  <todos-main></todos-main>
-  <todos-footer></todos-footer>
+  <h3>Your daily Todos</h3>
+  <ul>
+    <li>
+      <a routerLink="/auth">Auth</a>
+    </li>
+    <li>
+      <a routerLink="/todos">Todo List</a>
+    </li>
+  </ul>
+<!-- 
+  show components when not routing
+  <todo-header></todo-header>
+  <todo-input></todo-input>
+  <todo-list></todo-list>-->
+  <!-- <todo-footer></todo-footer>  -->
+  <router-outlet></router-outlet>
 </div>

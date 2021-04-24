@@ -1,13 +1,14 @@
 import { TodosService } from './../todos.service';
 import { FilterEnum } from './../types/filter.enum';
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'todo-count',
   templateUrl: './todo-count.component.html',
-  styleUrls: ['./todo-count.component.css']
+  styleUrls: ['./todo-count.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TodoCountComponent implements OnInit {
 
