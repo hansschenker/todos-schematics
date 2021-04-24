@@ -14,7 +14,7 @@ import {
 
 
 @Component({
-  selector: 'app-todos-todo',
+  selector: 'todo-item',
   templateUrl: './todo-list-item.component.html',
 })
 export class TodoListItem implements OnInit, OnChanges {
