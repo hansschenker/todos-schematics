@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { FilterEnum } from '../../types/filter.enum';
 
 @Component({
-  selector: 'app-todos-footer',
+  selector: 'todos-footer',
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {
@@ -16,7 +16,7 @@ export class FooterComponent {
   filterEnum = FilterEnum;
 
   constructor(private todosService: TodosService) {
-    
+
     this.activeCount$ = this.todosService.todos$.pipe(
       map((todos) => todos.filter((todo) => !todo.isCompleted).length)
     );

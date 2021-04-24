@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { FilterEnum } from '../../types/filter.enum';
 
 @Component({
-  selector: 'app-todos-main',
+  selector: 'todos-main',
   templateUrl: './main.component.html',
 })
 export class MainComponent {
@@ -20,7 +20,7 @@ export class MainComponent {
     this.isAllTodosSelected$ = this.todosService.todos$.pipe(
       map((todos) => todos.every((todo) => todo.isCompleted))
     );
-    
+
     this.noTodoClass$ = this.todosService.todos$.pipe(
       map((todos) => todos.length === 0)
     );
