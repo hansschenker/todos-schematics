@@ -14,23 +14,23 @@ import { map } from 'rxjs/operators';
 export class TodoListComponent implements OnInit {
 
   visibleTodos$: Observable<Todo[]>;
-  noTodoClass$: Observable<boolean>;
-  isAllTodosSelected$: Observable<boolean>;
+  noDataChanges$: Observable<boolean>;
+  allTodosCompletedChanges$: Observable<boolean>;
   editingId: string | null = null;
 
   constructor(private todosService: TodosService) {
     // filter all isCompleted
-    this.isAllTodosSelected$ = this.todosService.todos$.pipe(
+    this.allTodosCompletedChanges$ = this.todosService.todosChanges$.pipe(
       map((todos) => todos.every((todo) => todo.isCompleted))
     );
     // no data changes
-    this.noTodoClass$ = this.todosService.todos$.pipe(
+    this.noDataChanges$ = this.todosService.todosChanges$.pipe(
       map((todos) => todos.length === 0)
     );
     // visible changes according to filter (active/completed)
     this.visibleTodos$ = combineLatest(
-      this.todosService.todos$,
-      this.todosService.filter$
+      this.todosService.todosChanges$,
+      this.todosService.filterChanges$
     ).pipe(
       map(([todos, filter]: [Todo[], FilterEnum]) => {
         // return active

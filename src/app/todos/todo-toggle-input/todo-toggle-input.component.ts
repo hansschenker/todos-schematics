@@ -31,7 +31,7 @@ export class TodoToggleComponent implements OnInit, OnChanges {
   }
   ngOnInit() {
     // map every todo isCompleted == true
-    this.isAllTodosSelected$ = this.todosService.todos$.pipe(
+    this.isAllTodosSelected$ = this.todosService.todosChanges$.pipe(
       map((todos) => todos.every((todo) => todo.isCompleted))
     );
   

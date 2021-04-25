@@ -1,17 +1,14 @@
-<ul class="filters">
+<ul class="filters" (click)="filtersclick($event)">
   <li>
-    <a
-      href="/"
-      [ngClass]="{ selected: (filter$ | async) === filterEnum.all }"
-      (click)="changeFilter($event, filterEnum.all)"
-    >
-      All
-    </a>
+    <todo-toggle></todo-toggle>
   </li>
+  <li>Show:</li>
+  <!-- [ngClass]="{ selected: (filter$ | async) === filterEnum.active }" -->
   <li>
     <a
       href="/"
       [ngClass]="{ selected: (filter$ | async) === filterEnum.active }"
+
       (click)="changeFilter($event, filterEnum.active)"
     >
       Active
@@ -20,6 +17,7 @@
 
   <li>
     <a
+      
       href="/"
       [ngClass]="{ selected: (filter$ | async) === filterEnum.completed }"
       (click)="changeFilter($event, filterEnum.completed)"
@@ -28,5 +26,12 @@
     </a>
   </li>
   <li>
+    <a
+      href="/"
+      [ngClass]="{ selected: (filter$ | async) === filterEnum.all }"
+      (click)="changeFilter($event, filterEnum.all)"
+    >
+      All
+    </a>
   </li>
 </ul>

@@ -5,12 +5,13 @@ import { FilterEnum } from './types/filter.enum';
 
 @Injectable()
 export class TodosService {
-  todos$ = new BehaviorSubject<Todo[]>([
+  todosChanges$ = new BehaviorSubject<Todo[]>([
     { id: 'a', text: 'Todo 100', isCompleted: false},
     { id: 'b', text: 'Todo 200', isCompleted: false},
     { id: 'c', text: 'Todo 300', isCompleted: false}
   ]);
-  filter$ = new BehaviorSubject<FilterEnum>(FilterEnum.all);
+
+  filterChanges$ = new BehaviorSubject<FilterEnum>(FilterEnum.all);
 
   addTodo(text: string): void {
     const newTodo: Todo = {
@@ -18,27 +19,27 @@ export class TodosService {
       isCompleted: false,
       id: Math.random().toString(16),
     };
-    const updatedTodos = [...this.todos$.getValue(), newTodo];
-    this.todos$.next(updatedTodos);
+    const updatedTodos = [...this.todosChanges$.getValue(), newTodo];
+    this.todosChanges$.next(updatedTodos);
   }
 
   toggleAll(isCompleted: boolean): void {
     console.log('isCompleted', isCompleted);
-    const updatedTodos = this.todos$.getValue().map((todo) => {
+    const updatedTodos = this.todosChanges$.getValue().map((todo) => {
       return {
         ...todo,
         isCompleted,
       };
     });
-    this.todos$.next(updatedTodos);
+    this.todosChanges$.next(updatedTodos);
   }
 
   changeFilter(filterName: FilterEnum): void {
-    this.filter$.next(filterName);
+    this.filterChanges$.next(filterName);
   }
 
   changeTodo(id: string, text: string): void {
-    const updatedTodos = this.todos$.getValue().map((todo) => {
+    const updatedTodos = this.todosChanges$.getValue().map((todo) => {
       if (todo.id === id) {
         return {
           ...todo,
@@ -48,19 +49,19 @@ export class TodosService {
 
       return todo;
     });
-    this.todos$.next(updatedTodos);
+    this.todosChanges$.next(updatedTodos);
   }
 
   removeTodo(id: string): void {
-    const updatedTodos = this.todos$
+    const updatedTodos = this.todosChanges$
       .getValue()
       .filter((todo) => todo.id !== id);
 
-    this.todos$.next(updatedTodos);
+    this.todosChanges$.next(updatedTodos);
   }
 
   toggleTodo(id: string): void {
-    const updatedTodos = this.todos$.getValue().map((todo) => {
+    const updatedTodos = this.todosChanges$.getValue().map((todo) => {
       if (todo.id === id) {
         return {
           ...todo,
@@ -69,6 +70,6 @@ export class TodosService {
       }
       return todo;
     });
-    this.todos$.next(updatedTodos);
+    this.todosChanges$.next(updatedTodos);
   }
 }

@@ -301,13 +301,17 @@ body {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	position: absolute;
+	/* position: absolute; */
 	right: 0;
 	left: 0;
 }
 
+.selected {
+	font-weight: bold;
+}
 .filters li {
-	display: inline;
+	display: inline-block;
+	margin-right: 15px;
 }
 
 .filters li a {
@@ -371,6 +375,20 @@ html .clear-completed:active {
 .toggle-complete {
 	background-color: teal;
 	color: white;
+}
+.list-footer {
+	background-color: lightgreen;
+	
+	/* align-items: center; */
+	/* justify-content:center; */
+}
+.spacer {
+	flex: 1 1 auto;
+}
+
+.toggle-all-wrapper {
+	float: left;
+	/* display: flex; */
 }
 /*
 	Hack to remove background from Mobile Safari.

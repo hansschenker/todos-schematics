@@ -20,7 +20,7 @@ export class TodoCountComponent implements OnInit {
 
   constructor(private todosService: TodosService) {
     
-    this.activeCount$ = this.todosService.todos$.pipe(
+    this.activeCount$ = this.todosService.todosChanges$.pipe(
       map((todos) => todos.filter((todo) => !todo.isCompleted).length)
     );
     this.itemsLeftText$ = this.activeCount$.pipe(
