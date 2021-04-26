@@ -50,6 +50,10 @@ body {
 	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
+.todoapp h2 {
+	text-align: center;
+}
+
 .todoapp input {
 	border: 1px solid blue;
 }
